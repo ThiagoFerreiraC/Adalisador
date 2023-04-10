@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -93,11 +94,11 @@ public class ProjetoServiceImpl implements ProjetoService {
                 .map(item -> {
                     return "Projeto "
                             + item.getNomeProjeto()
-                            + "\n\t"
+                            + "\n"
                             + getResults(item)
                             + "\n";
                 })
-                .reduce((a,b) -> a +b)
+                .reduce((a, b) -> a + b)
                 .get();
     }
 
@@ -124,7 +125,7 @@ public class ProjetoServiceImpl implements ProjetoService {
                 })
                 .flatMap(List::stream)
                 .map(item -> {
-                    return "Composto "
+                    return "Fórmula Molecular "
                             + item.getMolecularFormula()
                             + ", MM "
                             + item.getMolecularWeight()
@@ -135,13 +136,23 @@ public class ProjetoServiceImpl implements ProjetoService {
 
     private String generateResult(List<String> propriedades, Set<Amostra> amostras) {
         String composicao = "";
+        List<String> nomesDosCompostos = amostras.stream()
+                .toList()
+                .stream()
+                .map(Amostra::getResultadosDRX)
+                .flatMap(Set::stream)
+                .toList();
+
         for (int i = 0; i < amostras.size(); i++) {
-            composicao += amostras.stream()
+            composicao += "\t"
+                    + amostras.stream()
                     .toList()
                     .get(i)
                     .getMateriaPrima()
                     .getDescricao()
-                    + ": "
+                    + ": Nome "
+                    + nomesDosCompostos.get(i)
+                    + ", "
                     + propriedades.get(i)
                     + "\n";
         }
