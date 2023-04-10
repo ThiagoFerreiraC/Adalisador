@@ -3,8 +3,11 @@
 ## Problemática
 
 Em um centro de pesquisa e desenvolvimento é uma ação rotineira ter que analisar matérias-primas enviadas por fornecedores. Isso pode ser feito para saber se elas atendem os requisitos necessários para o desenvolvimento de um novo produto ou para a substituição de componentes de um produto já estabelecido. 
+
 Um teste comum de realizar-se quando se trabalha com minerais é o DRX, ou difratômetria de raio-X, para detectar as fases minerais presentes nos cristais que compõem um mineral, ou seja, detectar componentes que possuem diferentes características físico-químicas de outras partes do material. 
+
 Nesse teste, raios-x são emitidos no cristal do mineral e através dos ângulos de difração que os raios sofrem uma vez que atinge o cristal é possível detectar-se a composição química das fases supracitadas.
+
 O DRX é muito importante, pois um mineral pode apresentar no interior de sua estrutura diversos compostos diferentes. Essas variações dependerão das condições geológicas de onde ele foi extraído, podendo haver inclusive variações entre a matéria-prima de um mesmo fornecedor dependo de qual parte da mina o material foi retirado. 
 O Adalisador visa então facilitar o armazenamento e consulta dos resultados de DRX no contexto de um centro de pesquisa e desenvolvimento principalmente na visão do pesquisador. 
 
